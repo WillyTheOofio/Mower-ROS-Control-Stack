@@ -5,7 +5,7 @@ This is my development workspace for the **NEXMOW robotic mower**. It’s where 
 ## Why this project?
 I am a **Mechanical Engineering student at NTU**. Before this, my world was mostly about CAD, thermodynamics, and physical structures. I had zero experience with ROS, Python-based remote control, or sensor fusion. But I noticed a problem: the mower drifts, and the trajectory was kinda ass. I realized that no amount of mechanical tweaking could fix it, I had to dive into the software side. This repo is a record of me **learning robotics from scratch** to solve real-world hardware headaches.
 
-##  Current Focus: Fixing the "Crooked Path"
+##  Current Focus: Fixing the drift
 Right now, I’m tackling the most frustrating part: **Heading Stabilization.**
 
 * **The Issue:** When the mower’s massive blades start spinning, they create huge **Electromagnetic Interference (EMI)**. This makes the magnetometer go crazy, causing the mower to drift off-course.
