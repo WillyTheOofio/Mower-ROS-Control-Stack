@@ -1,6 +1,6 @@
 # Mower-ROS-Control-Stack 
 
-This is my development workspace for the **NEXMOW robotic mower**. It’s where I’m building the "brain" to make the machine smarter and more precise.
+This is my development workspace for the **NEXMOW robotic mower**. It’s where I’m building the brain to make the machine smarter and more precise.
 
 ## Why this project?
 I am a **Mechanical Engineering student at NTU**. Before this, my world was mostly about CAD, thermodynamics, and physical structures. I had zero experience with ROS, Python-based remote control, or sensor fusion. But I noticed a problem: the mower drifts, and the trajectory was kinda ass. I realized that no amount of mechanical tweaking could fix it, I had to dive into the software side. This repo is a record of me **learning robotics from scratch** to solve real-world hardware headaches.
@@ -8,7 +8,7 @@ I am a **Mechanical Engineering student at NTU**. Before this, my world was most
 ##  Current Focus: Fixing the drift
 Right now, I’m tackling the most frustrating part: **Heading Stabilization.**
 
-* **The Issue:** When the mower’s massive blades start spinning, they create huge **Electromagnetic Interference (EMI)**. This makes the magnetometer go crazy, causing the mower to drift off-course.
+* **The Issue:** My guess is, when the mower’s blades start spinning, they create **Electromagnetic Interference**. This makes the magnetometer go crazy, causing the mower to drift off-course.
 * **What I’ve built:** - `mag_interference_logger.py`: An automated script to profile motor noise with precision timing.
     - `filter_stability_test.py`: A diagnostic tool to calculate sensor RMS noise and stability.
 * **The Goal:** Use IMU data to compensate for that noise so the mower can actually drive in a straight line on the grass.
