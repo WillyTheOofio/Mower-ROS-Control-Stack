@@ -11,6 +11,8 @@ Right now, I’m tackling the most frustrating part: **Heading Stabilization.**
 * **The Issue:** My guess is, when the mower’s blades start spinning, they create **Electromagnetic Interference**. This makes the magnetometer go crazy, causing the mower to drift off-course.
 * **What I’ve built:** - `mag_interference_logger.py`: An automated script to profile motor noise with precision timing.
     - `filter_stability_test.py`: A diagnostic tool to calculate sensor RMS noise and stability.
+    - **2026/3/28** `config/ekf_mower.yaml` & `launch/ekf.launch`: The "Brain". Integrating the `robot_localization` package to fuse Odometry and IMU, aggressively filtering out the blade motor EMI.
+    - **2026/3/28** `docs/Test_Plan.md`: The Standard Operating Procedure (SOP) for our field tests at the Shuiyuan campus.
 * **The Goal:** Use IMU data to compensate for that noise so the mower can actually drive in a straight line on the grass.
 
 ##  Results & Visualization
