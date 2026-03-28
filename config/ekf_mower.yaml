@@ -1,0 +1,20 @@
+# 1. 基礎設定
+frequency: 30  # EKF 輸出的頻率 (30 Hz)
+sensor_timeout: 0.1
+two_d_mode: true  # 【關鍵】割草機不會飛，鎖定 Z 軸、Roll、Pitch，節省算力
+
+# 2. 輪速計 (Odometry) 來源
+odom0: /odom   # 替換成你車子實際的輪速 Topic
+odom0_config: [false, false, false, # x, y, z
+               false, false, false, # roll, pitch, yaw
+               true,  false, false, # vx, vy, vz (相信輪子給的 X 軸前進速度)
+               false, false, true,  # vroll, vpitch, vyaw (相信輪子給的旋轉速度)
+               false, false, false] # ax, ay, az
+
+# 3. IMU 來源 (包含陀螺儀與受干擾的磁力計)
+imu0: /imu/data  # 替換成你車子實際的 IMU Topic
+imu0_config: [false, false, false,
+              false, false, true,   # x, y, z, roll, pitch, YAW (絕對方向)
+              false, false, false,
+              false, false, true,   # vroll, vpitch, VYAW (陀螺儀角速度)
+              true,  false, false]  # AX (前進加速度)
