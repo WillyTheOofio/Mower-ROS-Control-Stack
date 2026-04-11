@@ -24,21 +24,21 @@
 ## Phase 3: Active EMI Test & Data Logging (Rosbag)
 **Objective:** Activate the blade motor to induce EMI while simultaneously logging CSV data (for plotting) and a Bag file (for offline EKF tuning).
 
-1. **Prepare Dual Terminals:** Open a new WSL window for **🪟 Terminal B**, and navigate to the same directory:
+1. **Prepare Dual Terminals:** Open a new WSL window for ** Terminal B**, and navigate to the same directory:
     ```bash
     wsl
     cd /mnt/c/Users/willy/Desktop/智慧車輛/EMU_test
     ```
-2. **Start Rosbag Recording (in 🪟 Terminal A):** Enter the command and press Enter. The terminal will pause, indicating it is recording.
+2. **Start Rosbag Recording (in Terminal A):** Enter the command and press Enter. The terminal will pause, indicating it is recording.
     ```bash
     rosbag record -O results/mower_emi_test_01 /imu/data /odom
     ```
-3. **Trigger Automated Test Script (in 🪟 Terminal B):** Execute the logger script to start the motor and record the CSV.
+3. **Trigger Automated Test Script (in Terminal B):** Execute the logger script to start the motor and record the CSV.
     ```bash
     python3 src/mag_interference_logger.py
     ```
     > ⚠️ **Note:** The script automatically runs the sequence: "Start -> Run for 15s -> Stop". Keep hands clear of the mower during execution.
-4. **Stop Recording:** Once Terminal B indicates the test is complete, return to **🪟 Terminal A** and press `Ctrl + C` to stop the rosbag recording.
+4. **Stop Recording:** Once Terminal B indicates the test is complete, return to ** Terminal A** and press `Ctrl + C` to stop the rosbag recording.
 
 ## Phase 4: On-Site Data Validation
 **Objective:** Verify that the data was successfully captured and exhibits clear EMI characteristics before disconnecting.
